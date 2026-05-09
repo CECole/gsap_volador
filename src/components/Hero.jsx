@@ -1,8 +1,8 @@
-import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
-import { useRef } from "react";
-import { useMediaQuery } from "react-responsive";
+import { useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 const Hero = () => {
     const videoRef = useRef();
@@ -19,30 +19,30 @@ const Hero = () => {
         gsap.from(heroSplit.chars, {
             yPercent: 100,
             duration: 1.8,
-            ease: "expo.out",
-            stagger: 0.06,
+            ease: 'expo.out',
+            stagger: 0.05,
         });
         
         gsap.from(paragraphSplit.lines, {
             opacity: 0,
             yPercent: 100,
             duration: 1.8,
-            ease: "expo.out",
+            ease: 'expo.out',
             stagger: 0.06,
             delay: 1,
         });
 
         gsap.timeline({
             scrollTrigger: {
-                trigger: "#hero",
-                start: "top top",
-                end: "bottom top",
+                trigger: '#hero',
+                start: 'top top',
+                end: 'bottom top',
                 scrub: true,
             },
         })
 
-        .to(".right-leaf", { y: 200 }, 0)
-        .to(".left-leaf", { y: -200 }, 0)
+        .to('.right-leaf', { y: 200 }, 0)
+        .to('.left-leaf', { y: -200 }, 0)
 
       const startValue = isMobile ?  'top 50%' : 'center 60%';
       const endValue = isMobile ?  '120% top' : 'bottom top';
@@ -55,23 +55,19 @@ const Hero = () => {
         scrub: true,
         pin: true,
       },
-      });
+    });
       
-      videoRef.current.onloadedmetadata = () => {
+    videoRef.current.onloadedmetadata = () => {
       tl.to(videoRef.current, {
         currentTime: videoRef.current.duration,
       });
-      };
-    }, []);
+    };
+  }, []);
 
   return (
     <>
-      <section id="hero" className="noisy">
-        <div>
-          <h1 className="title">Welcome to<br />El Volador</h1>
-          <p className="subtitle">
-            Experience the thrill of flight with our amazing services.
-          </p>
+      <section id="hero" className="noisy backdrop-brightness-50">
+          <h1 className="title">EL VOLADOR</h1>
           <img 
               src="/images/hero-left-leaf.png"
               alt="left-leaf"
@@ -82,7 +78,6 @@ const Hero = () => {
               alt="right-leaf"
               className="right-leaf"
           />
-        </div>
         <div className="body">
           <div className="content">
               <div className="space-y-5 hidden md:block">
@@ -108,10 +103,10 @@ const Hero = () => {
       <div className="video absolute inset-0">
         <video
           ref={videoRef}
-          src="/videos/output.mp4"
           muted
           playsInline
           preload="auto"
+          src="/videos/output.mp4"
         />  
       </div>
     </>

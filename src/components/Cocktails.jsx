@@ -1,4 +1,3 @@
-import React from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { cocktailLists, mockTailLists } from '../constants';
@@ -21,7 +20,7 @@ const Cocktails = () => {
     });
 
     return (
-        <section id="cocktails" className="noisy">
+        <section id="cocktails" className="noisy backdrop-brightness-50">
             <img src="/images/cocktail-left-leaf.png" alt="l-leaf" id="c-left-leaf" />
             <img src="/images/cocktail-right-leaf.png" alt="r-leaf" id="c-right-leaf" />
 
