@@ -1,8 +1,8 @@
-import React from 'react'
-import {featureLists, goodLists} from "../constants/index.js";
-import {useMediaQuery} from "react-responsive";
-import {useGSAP} from "@gsap/react";
 import gsap from 'gsap';
+import {useGSAP} from "@gsap/react";
+import {useMediaQuery} from "react-responsive";
+import {featureLists, goodLists} from "../constants/index.js";
+
 
 const Art = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 })
